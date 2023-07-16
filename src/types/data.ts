@@ -7,3 +7,11 @@ export interface dataSignUp {
   password: string;
   name: string;
 }
+export interface sentToken {
+  email: string;
+}
+export interface refreshPassword {
+  oldPassword: string;
+  password: string;
+  confirmPassword: string;
+}

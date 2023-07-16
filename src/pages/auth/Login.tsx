@@ -16,19 +16,21 @@ const Login = () => {
     },
   });
   const submitForm: SubmitHandler<dataLogIn> = async (data) => {
-    try {
-      await axios.post(`${import.meta.env.VITE_SV}/api/user/login`, data);
-      toast.success("Sign In Successfully");
-    } catch (error) {
-      toast.error("Error signing in");
-    }
+    await axios
+      .post(`${import.meta.env.VITE_SV}/api/user/login`, data)
+      .then(() => {
+        toast.success("Sign In Successfully");
+      })
+      .catch((error) => {
+        toast.error(error.response.data.error);
+      });
   };
 
   return (
     <Auth page="signin">
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="flex flex-col items-end w-[400px] gap-y-5  shadow-sm p-5 rounded-lg bg-slate-50 "
+        className="flex flex-col  w-[400px] gap-y-5  shadow-sm p-5 rounded-lg bg-slate-50 animate-left "
       >
         <Input
           name="email"
@@ -42,8 +44,8 @@ const Login = () => {
           type="text"
           control={control}
         ></Input>
-        <span className="text-gray-400  ">
-          <Link to={"/"}>Recover Password ?</Link>
+        <span className="text-gray-400 flex justify-end ">
+          <Link to={"/forgotPassword"}>Recover Password ?</Link>
         </span>
         <Button type={"submit"}>Sign In</Button>
       </form>

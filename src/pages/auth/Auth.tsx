@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 type Props = {
   children: ReactNode;
-  page: "signin" | "signup";
+  page: "signin" | "signup" | "forgotPassword";
 };
 const Auth = ({ children, page }: Props) => {
   let message1, message2, message3, message4;
@@ -20,6 +20,12 @@ const Auth = ({ children, page }: Props) => {
       message3 = "you can";
       message4 = " Log In here!";
       break;
+    case "forgotPassword":
+      message1 = "Recover Account";
+      message2 = "if you remember the account";
+      message3 = "you can";
+      message4 = " Log In here!";
+      break;
     default:
       break;
   }
@@ -28,7 +34,7 @@ const Auth = ({ children, page }: Props) => {
       <div className=" items-center lg:justify-between gap-y-10 flex-1 relative flex lg:flex-row flex-col">
         <div className="items-center flex  ">
           <div>
-            <h1 className="font-semibold text-[60px] lg:text-[100px] mb-10">
+            <h1 className="font-semibold text-[60px] lg:text-[80px] mb-10">
               {message1}
             </h1>
             <p className="text-xl">
@@ -40,9 +46,9 @@ const Auth = ({ children, page }: Props) => {
               </span>
             </p>
           </div>
-          <div className="absolute  left-[30%] top-44 hidden lg:block">
+          <div className="absolute  left-[15%] top-[calc(50%+2rem)] hidden lg:block -z-[100]">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
               src="/rocket.png"
               alt=""
             />

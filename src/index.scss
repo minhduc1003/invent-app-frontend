@@ -6,3 +6,34 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+.animate-right {
+  animation: 2s ease-in animate-rights;
+  // display: none;
+}
+.animate-left {
+  animation: 1s ease-in animate-left;
+  // display: none;
+}
+@keyframes animate-rights {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+}
+@keyframes animate-left {
+  from {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.shadow-custom {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

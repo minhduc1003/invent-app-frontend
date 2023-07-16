@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Auth from "./Auth";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContent } from "react-toastify";
 const SignUp = () => {
   const { control, handleSubmit } = useForm<dataSignUp>({
     mode: "onChange",
@@ -16,18 +16,20 @@ const SignUp = () => {
     },
   });
   const onSubmit = handleSubmit(async (data: dataSignUp) => {
-    try {
-      await axios.post(`${import.meta.env.VITE_SV}/api/user/register`, data);
-      toast.success("Sign Up Successfully");
-    } catch (error) {
-      toast.error("Error signing Up");
-    }
+    await axios
+      .post(`${import.meta.env.VITE_SV}/api/user/register`, data)
+      .then(() => {
+        toast.success("Sign Up Successfully");
+      })
+      .catch((error) => {
+        toast.error(error.response.data.error);
+      });
   });
   return (
     <Auth page="signup">
       <form
         onSubmit={onSubmit}
-        className="flex flex-col items-end w-[400px] gap-y-5  shadow-sm p-5 rounded-lg bg-slate-50 "
+        className="flex flex-col  w-[400px] gap-y-5  shadow-sm p-5 rounded-lg bg-slate-50 animate-left"
       >
         <Input
           name="name"
@@ -47,8 +49,8 @@ const SignUp = () => {
           type="text"
           control={control}
         ></Input>
-        <span className="text-gray-400  ">
-          <Link to={"/"}>Recover Password ?</Link>
+        <span className="text-gray-400 flex justify-end ">
+          <Link to={"/forgotPassword"}>Recover Password ?</Link>
         </span>
         <Button type={"submit"}>Sign In</Button>
       </form>
