@@ -45,7 +45,7 @@ const Login = () => {
           control={control}
         ></Input>
         <span className="text-gray-400 flex justify-end ">
-          <Link to={"/forgotPassword"}>Recover Password ?</Link>
+          <Link to={"/forgotPassword/email"}>Recover Password ?</Link>
         </span>
         <Button type={"submit"}>Sign In</Button>
       </form>
