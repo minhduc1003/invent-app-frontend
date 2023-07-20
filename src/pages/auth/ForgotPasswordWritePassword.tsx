@@ -2,9 +2,9 @@ import axios from "axios";
 import Auth from "./Auth";
 import { toast } from "react-toastify";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { refreshPassword, sentToken } from "../../types/data";
+import { refreshPassword } from "../../types/data";
 import Input from "../../components/Input";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button";
 const ForgotPasswordWritePassword = () => {
   const { control, handleSubmit } = useForm<refreshPassword>({

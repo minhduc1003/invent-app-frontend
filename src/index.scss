@@ -5,14 +5,67 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @apply text-base;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f3f0;
+  user-select: none;
 }
+
+.sticky {
+  @apply fixed top-0 left-0 right-0;
+}
+
 .animate-right {
   animation: 2s ease-in animate-rights;
   // display: none;
 }
+.transitionY {
+  animation: 0.2s linear transitiony;
+}
 .animate-left {
   animation: 1s ease-in animate-left;
   // display: none;
+}
+.hoverHeaderAnimation:hover {
+  @apply bg-color-secondary text-color-white rounded-full;
+  transform: scale(1.1);
+}
+.navLink:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: black;
+  animation: 0.1s linear transX;
+}
+
+@keyframes animateHover {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes transX {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes transitiony {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes animate-rights {
   from {

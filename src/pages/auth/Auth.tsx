@@ -10,19 +10,19 @@ const Auth = ({ children, page }: Props) => {
   switch (page) {
     case "signin":
       message1 = "Sign In";
-      message2 = "if you don't an account";
+      message2 = "If you don't an account";
       message3 = "you can";
       message4 = " Register here!";
       break;
     case "signup":
       message1 = "Sign Up";
-      message2 = "if you have an account";
+      message2 = "If you have an account";
       message3 = "you can";
       message4 = " Log In here!";
       break;
     case "forgotPassword":
       message1 = "Recover Account";
-      message2 = "if you remember the account";
+      message2 = "If you remember the account";
       message3 = "you can";
       message4 = " Log In here!";
       break;

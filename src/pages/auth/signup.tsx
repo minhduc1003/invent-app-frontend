@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Auth from "./Auth";
 import axios from "axios";
-import { toast, ToastContent } from "react-toastify";
+import { toast } from "react-toastify";
 const SignUp = () => {
   const { control, handleSubmit } = useForm<dataSignUp>({
     mode: "onChange",

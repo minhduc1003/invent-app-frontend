@@ -15,3 +15,14 @@ export interface refreshPassword {
   password: string;
   confirmPassword: string;
 }
+export interface userContext {
+  islogin: () => void;
+}
+export interface userData {
+  name: string;
+  email: string;
+  photo: string;
+  phone: number;
+  bio: string;
+  permission: string;
+}

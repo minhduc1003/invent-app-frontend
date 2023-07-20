@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { sentToken } from "../../types/data";
 import Input from "../../components/Input";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import { useState } from "react";
 const ForgotPasswordWriteEmail = () => {

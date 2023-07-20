@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Auth from "./Auth";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { saveCookie } from "../../utils/auth";
 
 const Login = () => {
   const { control, handleSubmit } = useForm<dataLogIn>({
@@ -18,7 +19,8 @@ const Login = () => {
   const submitForm: SubmitHandler<dataLogIn> = async (data) => {
     await axios
       .post(`${import.meta.env.VITE_SV}/api/user/login`, data)
-      .then(() => {
+      .then((res) => {
+        saveCookie(res.data.token);
         toast.success("Sign In Successfully");
       })
       .catch((error) => {
