@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Input from "../../components/Input";
+import Input from "./components/Input";
 import { dataSignUp } from "../../types/data";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";

@@ -1,16 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
   @apply text-base;
   font-family: "Poppins", sans-serif;
-  background-color: #f9f3f0;
   user-select: none;
+  position: relative;
 }
-
+.style {
+  @apply text-color-midgray;
+  background-color: #f9f3f0;
+}
 .sticky {
   @apply fixed top-0 left-0 right-0;
 }
@@ -22,6 +27,12 @@ body {
 .transitionY {
   animation: 0.2s linear transitiony;
 }
+.transitionTitle {
+  animation: 0.5s linear transitiontitleY;
+}
+.transitionImage {
+  animation: 0.5s linear transitionImageX;
+}
 .animate-left {
   animation: 1s ease-in animate-left;
   // display: none;
@@ -30,7 +41,7 @@ body {
   @apply bg-color-secondary text-color-white rounded-full;
   transform: scale(1.1);
 }
-.navLink:hover::before {
+.navLink::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -38,9 +49,67 @@ body {
   width: 100%;
   height: 2.5px;
   background-color: black;
-  animation: 0.1s linear transX;
 }
+.navLinkHover:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: black;
+  animation: 0.3s ease-in-out transX;
+}
+.sideBar {
+  animation: 0.3s ease-in-out transitionImageX;
+}
+.sliderNext {
+  animation: 0.6s ease-in-out sliderNextX;
+}
+.silderPrev {
+  animation: 0.6s ease-in-out silderPrevX;
+}
+.scaleImage:hover > .imgdiv {
+  transform: scale(1.05);
 
+  animation: 0.3s linear scaleAnimate;
+}
+.scaleImage:hover > .imgdiv > .productOption {
+  transform: translate(0, -5rem);
+  animation: 0.2s linear translateImageProductHover;
+}
+@keyframes translateImageProductHover {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -5rem);
+  }
+}
+@keyframes scaleAnimate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+@keyframes silderPrevX {
+  from {
+    transform: translateX(-101%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes sliderNextX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-101%);
+  }
+}
 @keyframes animateHover {
   from {
     transform: scale(0);
@@ -49,12 +118,33 @@ body {
     transform: scale(1);
   }
 }
+
 @keyframes transX {
   from {
     width: 0;
   }
   to {
     width: 100%;
+  }
+}
+@keyframes transitionImageX {
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes transitiontitleY {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes transitiony {

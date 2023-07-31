@@ -6,8 +6,8 @@ import React, {
   LegacyRef,
 } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCurrency, changeLanguage } from "../redux/globleSlice";
-import useOnClickOutside from "../hooks/useOnClickOutSide";
+import useOnClickOutside from "../../../hooks/useOnClickOutSide";
+import { changeCurrency, changeLanguage } from "../../../redux/globleSlice";
 type Props = {
   children: ReactNode;
   type: "language" | "currency";

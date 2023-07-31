@@ -3,7 +3,7 @@ import Auth from "./Auth";
 import { toast } from "react-toastify";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { sentToken } from "../../types/data";
-import Input from "../../components/Input";
+import Input from "./components/Input";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import { useState } from "react";

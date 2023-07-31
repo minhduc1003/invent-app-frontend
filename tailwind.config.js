@@ -37,6 +37,18 @@ export default {
       "color-vimeo": "#00ADEF",
       "color-twitch": "#6441A3",
       "color-discord": "#7289da",
+      "color-yellow": "#ffdc60",
+    },
+    screens: {
+      sm: "640px",
+
+      md: "768px",
+
+      lg: "1024px",
+
+      xl: "1280px",
+
+      "2xl": "1536px",
     },
   },
   plugins: [],

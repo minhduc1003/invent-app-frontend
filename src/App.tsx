@@ -4,10 +4,12 @@ import SignUp from "./pages/auth/signup";
 import ForgotPasswordWriteEmail from "./pages/auth/ForgotPasswordWriteEmail";
 import ForgotPasswordWritePassword from "./pages/auth/ForgotPasswordWritePassword";
 import CheckEmail from "./pages/auth/CheckEmail";
-import Home from "./pages/auth/home/Home";
+import Home from "./pages/home/Home";
 import { AuthProvider } from "./contexts/userInfor";
-import Header from "./layouts/Header";
-import MainLayout from "./layouts/MainLayout";
+import Header from "./layouts/Header/Header";
+import Shop from "./pages/shop/Shop";
+import Contact from "./pages/contact/Contact";
+import About from "./pages/about/About";
 
 function App() {
   return (
@@ -25,9 +27,11 @@ function App() {
             element={<ForgotPasswordWritePassword />}
           />
           <Route path="/forgotPassword/checkEmail" element={<CheckEmail />} />
-
           <Route element={<Header />}>
             <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
       </AuthProvider>

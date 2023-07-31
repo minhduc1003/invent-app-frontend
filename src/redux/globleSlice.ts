@@ -7,6 +7,7 @@ interface globalSlice {
   isSearchOpen: boolean;
   isLogin: boolean;
   isOptionHeaderOpen: boolean;
+  isMenuOpen: boolean;
 }
 const initialState: globalSlice = {
   languages: "english",
@@ -16,6 +17,7 @@ const initialState: globalSlice = {
   isfavoriteOpen: false,
   isSearchOpen: false,
   isLogin: false,
+  isMenuOpen: false,
 };
 export const globalSlice = createSlice({
   name: "global",
@@ -42,6 +44,9 @@ export const globalSlice = createSlice({
     changeOptionHeaderOpen: (state, action: PayloadAction<boolean>) => {
       state.isOptionHeaderOpen = action.payload;
     },
+    changeMenuOpen: (state, action: PayloadAction<boolean>) => {
+      state.isMenuOpen = action.payload;
+    },
   },
 });
 export const {
@@ -52,5 +57,6 @@ export const {
   changeLogin,
   changeSearchOpen,
   changeOptionHeaderOpen,
+  changeMenuOpen,
 } = globalSlice.actions;
 export default globalSlice.reducer;
